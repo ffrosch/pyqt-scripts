@@ -10,12 +10,15 @@ Custom scripts that I built to understand PyQt5's functionality or to try out us
 the possibility to auto-complete names based on backend data and add/remove them to/from a list.
 
 #### Desktop calculator
-Understanding the basic of PyQt5 and building a desktop calculator [[1]](#1).
+Understanding the basics of PyQt5 and building a desktop calculator [[1]](#1).
+* dialog.py
+* hello.py
+* main_window.py
+* h_layout.py
 * f_layout.py
 * g_layout.py
-* h_layout.py
 * v_layout.py
-* hello.py
+
 
 ## References
 <a id="1">[1]</a> [Python and PyQt: Building a GUI Desktop Calculator](https://realpython.com/python-pyqt-gui-calculator/)
