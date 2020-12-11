@@ -1,5 +1,6 @@
 """Signals and slots example."""
 
+import functools
 import sys
 
 from PyQt5.QtWidgets import (QApplication,
@@ -9,12 +10,12 @@ from PyQt5.QtWidgets import (QApplication,
                              QWidget)
 
 
-def greeting():
+def greeting(who):
     """Slot function."""
     if msg.text():
         msg.setText('')
     else:
-        msg.setText('Hello World')
+        msg.setText(f'Hello {who}')
         
 
 app = QApplication(sys.argv)
@@ -24,7 +25,8 @@ layout = QVBoxLayout()
 
 btn = QPushButton('Greet')
 # Every widget has its own set of predefined signals -> check them out in the docs
-btn.clicked.connect(greeting)
+# Arguments can be passed to the function with functools.partial or lambda expressions
+btn.clicked.connect(functools.partial(greeting, 'World!'))
 
 layout.addWidget(btn)
 msg = QLabel('')
