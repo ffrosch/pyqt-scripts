@@ -1,3 +1,4 @@
+import operator as op
 import sys
 
 from functools import partial
@@ -10,11 +11,17 @@ from PyQt5.QtWidgets import (QApplication,
                              QPushButton,
                              QVBoxLayout)
 
-__version__ = '0.1'
+__version__ = '0.1.1'
 __author__ = 'Leonadis Pozo Ramos, modified by Florian Frosch'
 
 
+DIGITS = set('0123456789')
 ERROR_MSG = 'ERROR'
+OPERATIONS = set(r'+-/*')
+PUNCTUATION = set('.()')
+
+ALLOWED = DIGITS | OPERATIONS | PUNCTUATION
+
 
 # Setup the calculator's GUI
 class PyCalcUi(QMainWindow):
@@ -123,9 +130,12 @@ class PyCalcCtrl:
 
 def evaluateExpression(expression):
     '''Model to calculate the input of the calculator'''
-    try:
-        result = str(eval(expression, {}, {}))
-    except Exception:
+    if set(expression) <= ALLOWED:
+        try:
+            result = str(eval(expression, {}, {}))
+        except Exception:
+            result = ERROR_MSG
+    else:
         result = ERROR_MSG
     
     return result
