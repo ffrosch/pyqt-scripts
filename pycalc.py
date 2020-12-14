@@ -14,6 +14,8 @@ __version__ = '0.1'
 __author__ = 'Leonadis Pozo Ramos, modified by Florian Frosch'
 
 
+ERROR_MSG = 'ERROR'
+
 # Setup the calculator's GUI
 class PyCalcUi(QMainWindow):
     '''The View of the MVC framework'''
@@ -86,16 +88,26 @@ class PyCalcUi(QMainWindow):
         
     def clearDisplay(self):
         '''Clear the display'''
-        self.setDisplay('')
+        self.setDisplayText('')
 
 
 class PyCalcCtrl:
     '''PyCalc Controller'''
-    def __init__(self, view):
+    def __init__(self, model, view):
+        self._evaluate = model
         self._view = view
         self._connectSignals()
-        
+    
+    def _calculateResult(self):
+        result = self._evaluate(expression=self._view.getDisplayText())
+        self._view.setDisplayText(result)
+    
     def _buildExpression(self, sub_exp):
+        # clear display after error
+        if self._view.getDisplayText() == ERROR_MSG:
+            self._view.clearDisplay()
+        
+        # add new input to display
         expression = self._view.getDisplayText() + sub_exp
         self._view.setDisplayText(expression)
         
@@ -103,8 +115,21 @@ class PyCalcCtrl:
         for btnText, btn in self._view.buttons.items():
             if btnText not in {'=', 'C'}:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
-                
+        
+        self._view.buttons['='].clicked.connect(self._calculateResult)
+        self._view.display.returnPressed.connect(self._calculateResult)
         self._view.buttons['C'].clicked.connect(self._view.clearDisplay)
+
+
+def evaluateExpression(expression):
+    '''Model to calculate the input of the calculator'''
+    try:
+        result = str(eval(expression, {}, {}))
+    except Exception:
+        result = ERROR_MSG
+    
+    return result
+
 
 def main():
     '''Execute the program'''
@@ -114,7 +139,8 @@ def main():
     view = PyCalcUi()
     view.show()
     # Create an instance of the controller
-    PyCalcCtrl(view=view)
+    model = evaluateExpression
+    PyCalcCtrl(model=model, view=view)
     # Run the calculator (start the main loop)
     sys.exit(pycalc.exec())
 
