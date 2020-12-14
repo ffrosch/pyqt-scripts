@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1431</width>
+    <height>944</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>50</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>30</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hohe Schulden</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>841</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Gerichte</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>811</width>
+        <height>281</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Gerichte</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableWidget">
+         <column>
+          <property name="text">
+           <string>Datum</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Gericht</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Einkaufende</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Anzahl Teilnehmende</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Kosten gesamt</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Kosten pro TN</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Einnahmen</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>abgerechnet</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>811</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Gericht hinzufügen/bearbeiten</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QFormLayout" name="formLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Datum</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCalendarWidget" name="calendarWidget"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>Gericht</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_7"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>Einkaufende</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string>Anzahl Teilnehmende</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>Kosten gesamt</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_6">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>Kosten pro TN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="lineEdit_5">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_20">
+             <property name="text">
+              <string>Einnahmen</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="lineEdit_4">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_21">
+             <property name="text">
+              <string>Abgerechnet</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QCheckBox" name="checkBox_2">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QDialogButtonBox" name="buttonBox_2">
+             <property name="standardButtons">
+              <set>QDialogButtonBox::Discard|QDialogButtonBox::Save</set>
+             </property>
+             <property name="centerButtons">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QTableWidget" name="tableWidget_5">
+               <column>
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Ausgaben</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QPushButton" name="pushButton_5">
+                 <property name="text">
+                  <string>+</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_6">
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Teilnehmende</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_3">
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>-</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>Verfügbar</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_4">
+             <column>
+              <property name="text">
+               <string>Name</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Personen</string>
+     </attribute>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>771</width>
+        <height>359</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Person hinzufügen/bearbeiten</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="horizontalSpacing">
+            <number>6</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Von</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDateEdit" name="dateEdit"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Bis</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDateEdit" name="dateEdit_2">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="checkBox">
+             <property name="text">
+              <string>unbefristet</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Guthaben</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Transaktionen</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QTableView" name="tableView">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Einzahlung</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string>+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Auszahlung</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="text">
+              <string>-</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QDialogButtonBox" name="buttonBox">
+             <property name="standardButtons">
+              <set>QDialogButtonBox::Discard|QDialogButtonBox::Save</set>
+             </property>
+             <property name="centerButtons">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Personen</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="tableWidget_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>500</width>
+             <height>0</height>
+            </size>
+           </property>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Von</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Bis</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Guthaben</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="listWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>290</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_23">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>270</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bald weg</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>550</y>
+      <width>521</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Monat</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Ausgaben</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Einnahmen</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Kontostand</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label_24">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>530</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bilanz</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1431</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
