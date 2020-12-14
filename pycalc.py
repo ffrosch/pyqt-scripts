@@ -1,5 +1,6 @@
 import sys
 
+from functools import partial
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication,
                              QMainWindow,
@@ -87,6 +88,24 @@ class PyCalcUi(QMainWindow):
         '''Clear the display'''
         self.setDisplay('')
 
+
+class PyCalcCtrl:
+    '''PyCalc Controller'''
+    def __init__(self, view):
+        self._view = view
+        self._connectSignals()
+        
+    def _buildExpression(self, sub_exp):
+        expression = self._view.getDisplayText() + sub_exp
+        self._view.setDisplayText(expression)
+        
+    def _connectSignals(self):
+        for btnText, btn in self._view.buttons.items():
+            if btnText not in {'=', 'C'}:
+                btn.clicked.connect(partial(self._buildExpression, btnText))
+                
+        self._view.buttons['C'].clicked.connect(self._view.clearDisplay)
+
 def main():
     '''Execute the program'''
     # Create a QApplication instance
@@ -94,6 +113,8 @@ def main():
     # Show the calculator's GUI
     view = PyCalcUi()
     view.show()
+    # Create an instance of the controller
+    PyCalcCtrl(view=view)
     # Run the calculator (start the main loop)
     sys.exit(pycalc.exec())
 
